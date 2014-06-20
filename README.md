@@ -18,3 +18,37 @@ Configuration
 1. Copy `config/zendesk.local.php.dist` file into your main application's `config/autoload' directory,
 rename it to `zendesk.local.php`
 2. Replace placeholder values with subdomain, username and API token read from Zendesk settings page
+
+Example:
+
+```php
+return [
+    'zendesk' => [
+        'subdomain' => 'mycompany',
+        'username'  => 'support@mycompany.com',
+        'token'     => 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+    ],
+];
+```
+
+Usage
+-----
+
+Once configured, MtZendeskApi will expose Zendesk API client using ServiceManager. Example usage (from controller):
+
+```php
+$client = $this->getServiceLocator()->get('Zendesk\API\Client');
+$newTicket = $client->tickets()->create(
+    [
+        'subject'   => 'Question to Support Team',
+        'tags'      => ['tag1', 'tag2'],
+        'requester' => [
+            'email' => 'johndoe@domain.com',
+        ],
+        'comment'   => [
+            'body' => "Ticket body"
+        ],
+        'priority'  => 'normal'
+    ]
+);
+```
