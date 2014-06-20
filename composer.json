@@ -1,0 +1,24 @@
+{
+    "name": "mtymek/mt-zendesk-api",
+    "version": "1.0.0-dev",
+    "description": "ZF2 module wrapper for Zendesk API",
+    "keywords": ["zf2", "module", "zendesk", "api"],
+    "require": {
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "license": "BSD 2-Clause",
+    "authors": [
+        {
+            "name": "Mateusz Tymek",
+            "email": "mtymek@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-0": {
+            "MtZendeskApi": "src/"
+        }
+    }
+}
