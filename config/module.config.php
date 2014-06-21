@@ -15,7 +15,7 @@ return [
     ],
     'service_manager' => [
         'factories' => [
-            'Zendesk\API\Client' => 'ZendeskApiModule\Factory\ZendeskApiClientFactory'
+            'Zendesk\API\Client' => 'MtZendeskApi\Factory\ZendeskApiClientFactory'
         ],
     ]
 ];

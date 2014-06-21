@@ -1,9 +1,11 @@
 {
     "name": "mtymek/mt-zendesk-api",
-    "version": "1.0.0-dev",
     "description": "ZF2 module wrapper for Zendesk API",
     "keywords": ["zf2", "module", "zendesk", "api"],
     "require": {
+        "php": "~5.4",
+        "zendframework/zendframework": "~2.2",
+        "zendesk/zendesk_api_client_php": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "*"
