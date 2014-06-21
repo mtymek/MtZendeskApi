@@ -1,8 +1,14 @@
 MtZendeskApi - ZF2 module wrapper for Zendesk PHP SDK
 =====================================================
 
-This module allows easy access of Zendesk API from within Zend Framework 2 application.
+[![Build Status](https://travis-ci.org/mtymek/MtZendeskApi.png?branch=master)](https://travis-ci.org/mtymek/MtZendeskApi)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mtymek/MtZendeskApi/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mtymek/MtZendeskApi/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/mtymek/MtZendeskApi/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/mtymek/MtZendeskApi/?branch=master)
 
+Introduction
+------------
+
+This module allows easy access of Zendesk API from within Zend Framework 2 application.
 
 Installation
 ------------
