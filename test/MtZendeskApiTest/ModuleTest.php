@@ -2,11 +2,24 @@
 
 namespace MtZendeskApiTest;
 
-use MyModule\Module;
+use MtZendeskApi\Module;
 use PHPUnit_Framework_TestCase;
 
 class ModuleTest extends PHPUnit_Framework_TestCase
 {
+    /**
+     * This test should verify if module configuration works out of the box
+     */
+    public function testGetConfigReturnsValidConfig()
+    {
+        $module = new Module();
+        $config = $module->getConfig();
+        $this->assertInternalType('array', $config);
+        $this->assertArrayHasKey('zendesk', $config);
+        $this->assertArrayHasKey('subdomain', $config['zendesk']);
+        $this->assertArrayHasKey('username', $config['zendesk']);
+        $this->assertArrayHasKey('token', $config['zendesk']);
+    }
     /**
      * Scans service manager configuration, returning all services created by factories and invokables
      * @return array
