@@ -26,7 +26,6 @@ class ZendeskApiClientFactory implements FactoryInterface
         $config = $serviceLocator->get('Configuration');
         $client = new Client($config['zendesk']['subdomain'], $config['zendesk']['username']);
         $client->setAuth('token', $config['zendesk']['token']);
-
         return $client;
     }
 }
