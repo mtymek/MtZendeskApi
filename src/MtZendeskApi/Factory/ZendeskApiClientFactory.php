@@ -1,6 +1,6 @@
 <?php
 /**
- * MtZendeskApi - ZF2 module wrapper around Zendesk PHP SDK
+ * MtZendeskApi - ZF2 module wrapper around Zendesk PHP SDK v2
  *
  * @link      http://github.com/mtymek/MtZendeskApi
  * @copyright Copyright (c) 2014 Mateusz Tymek
@@ -11,7 +11,7 @@ namespace MtZendeskApi\Factory;
 
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
-use Zendesk\API\Client;
+use Zendesk\API\HttpClient as ZendeskAPI;
 
 class ZendeskApiClientFactory implements FactoryInterface
 {
@@ -24,8 +24,9 @@ class ZendeskApiClientFactory implements FactoryInterface
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
         $config = $serviceLocator->get('Configuration');
-        $client = new Client($config['zendesk']['subdomain'], $config['zendesk']['username']);
-        $client->setAuth('token', $config['zendesk']['token']);
+        $client = new ZendeskAPI($config['zendesk']['subdomain'], $config['zendesk']['username']);
+        $client->setAuth('basic', ['username' => $config['zendesk']['username'], 'token' => $config['zendesk']['token']]);
+
         return $client;
     }
 }
