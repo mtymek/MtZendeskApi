@@ -32,7 +32,8 @@ class Bootstrap
         static::initAutoloader();
 
         $cfg = include __DIR__ . '/../config/module.config.php';
-        $serviceManager = new ServiceManager(new Config($cfg['service_manager']));
+        $serviceManager = new ServiceManager();
+        (new Config($cfg['service_manager']))->configureServiceManager($serviceManager);
         $serviceManager->setService('Configuration', $cfg);
         $serviceManager->setAlias('Config', 'Configuration');
 
