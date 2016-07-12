@@ -16,7 +16,7 @@ class ZendeskApiClientFactory
 {
     public function __invoke(ContainerInterface $container)
     {
-        $config = $container->get('Configuration');
+        $config = $container->get('config');
         $client = new Client($config['zendesk']['subdomain'], $config['zendesk']['username']);
         $client->setAuth('token', $config['zendesk']['token']);
         return $client;
